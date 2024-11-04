@@ -1,0 +1,93 @@
+---
+title: "LAWS-HiC Example"
+output: html_document
+date: "2024-11-03"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Input requirement
+
+The required input of LAWS-HiC are:
+
+* results from a standard peak caller (e.g., FitHiC2): only bin pair coordinators and p-value are needed for LAWS-HiC
+
+* domain list, in this example domain list is topologically associated domain (TAD) list
+
+Let's first look at the input format of the standard peak caller results:
+
+```{r}
+library(data.table)
+example_data <- fread("./example_data.tsv")
+example_domain_list <- fread("./example_domain_list.tsv")
+
+example_data[1:10,]
+```
+
+The four columns of the standard peak caller results should be:
+
+* chr: chromosome number
+
+* fragmentMid1, fragmentMid2: coordinators of bin pairs (middle position of the fragment in this example), 
+
+* p_value: p-value from the standard peak caller
+
+The format for the domain list:
+
+```{r}
+example_domain_list[1:10,]
+```
+
+The four columns are chromosome number, start and end position of the domain.
+The four columns of the domain list should be:
+
+* chr: chromosome number 
+
+* x1: start position of the domain
+
+* x2: end position of the domain
+
+
+
+## LAWS-HiC
+
+The required parameters of LAWS-HiC function:
+
+* input: data of standard peak caller results with format previously shown
+
+* domain_input: data of domain list with format previously shown
+
+* chr: chromosome number
+
+* resolution: resolution of the original in kb
+
+```{r}
+source("./laws_hic.R")
+example_output <- laws_hic(input=example_data, 
+                           domain_input=example_domain_list, 
+                           chr=21, resolution=10)
+```
+
+This function will output the tuned tau and h for each domain.
+
+```{r}
+example_output[1:10,]
+```
+
+
+The columns in the output data are: 
+
+* chr:chromosome number
+
+* fragmentMid1, fragmentMid2: coordinators of bin pairs (same as input)
+
+* p_value: p-value from the standard peak caller
+
+* i,j: identifiers of bin pairs
+
+* p_laws: LAWS-HiC adjusted p-value
+
+* pi: LAWS-HiC estimated spatial level
+
