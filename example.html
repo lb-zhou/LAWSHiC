@@ -360,7 +360,7 @@ display: none;
 <p>The required input of LAWS-HiC are:</p>
 <ul>
 <li><p>results from a standard peak caller (e.g., FitHiC2): only bin
-pair coordinators and p-value are needed for LAWS-HiC</p></li>
+pair coordinators and p-values are needed for LAWS-HiC</p></li>
 <li><p>domain list, in this example domain list is topologically
 associated domain (TAD) list</p></li>
 </ul>
@@ -404,8 +404,7 @@ position of the fragment in this example),</p></li>
 ##  8:    21 15630000 15755000
 ##  9:    21 17100000 17200000
 ## 10:    21 15895000 16060000</code></pre>
-<p>The four columns are chromosome number, start and end position of the
-domain. The four columns of the domain list should be:</p>
+<p>The three columns of the domain list should be:</p>
 <ul>
 <li><p>chr: chromosome number</p></li>
 <li><p>x1: start position of the domain</p></li>
@@ -421,7 +420,7 @@ previously shown</p></li>
 <li><p>domain_input: data of domain list with format previously
 shown</p></li>
 <li><p>chr: chromosome number</p></li>
-<li><p>resolution: resolution of the original in kb</p></li>
+<li><p>resolution: resolution of the original Hi-C data in kb</p></li>
 </ul>
 <pre class="r"><code>source(&quot;./laws_hic.R&quot;)
 example_output &lt;- laws_hic(input=example_data, 

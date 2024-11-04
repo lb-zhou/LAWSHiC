@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The required input of LAWS-HiC are:
 
-* results from a standard peak caller (e.g., FitHiC2): only bin pair coordinators and p-value are needed for LAWS-HiC
+* results from a standard peak caller (e.g., FitHiC2): only bin pair coordinators and p-values are needed for LAWS-HiC
 
 * domain list, in this example domain list is topologically associated domain (TAD) list
 
@@ -40,8 +40,7 @@ The format for the domain list:
 example_domain_list[1:10,]
 ```
 
-The four columns are chromosome number, start and end position of the domain.
-The four columns of the domain list should be:
+The three columns of the domain list should be:
 
 * chr: chromosome number 
 
@@ -61,7 +60,7 @@ The required parameters of LAWS-HiC function:
 
 * chr: chromosome number
 
-* resolution: resolution of the original in kb
+* resolution: resolution of the original Hi-C data in kb
 
 ```{r}
 source("./laws_hic.R")
