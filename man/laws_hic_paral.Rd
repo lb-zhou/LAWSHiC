@@ -4,7 +4,7 @@
 \alias{laws_hic_paral}
 \title{LAWS-Adjusted 3D Peak Calling P-Values. (Parallelized)}
 \usage{
-laws_hic_paral(input, domain_input, chr, resolution)
+laws_hic_paral(input, domain_input, chr, resolution, gc_frequency = 20)
 }
 \arguments{
 \item{input}{A data.table containing Hi-C interactions with columns:
@@ -16,6 +16,8 @@ laws_hic_paral(input, domain_input, chr, resolution)
 \item{chr}{A character string indicating the chromosome to process.}
 
 \item{resolution}{A numeric value representing the resolution of Hi-C data in kilobases (kb).}
+
+\item{gc_frequency}{Garbage collection frequency, default is 20.}
 }
 \value{
 A \code{data.table} containing the original peak calling results with two additional columns: \code{p_laws} (adjusted p-values) and \code{pi} (estimated sparsity level).
