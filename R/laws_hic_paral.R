@@ -13,13 +13,13 @@
 #' @import foreach
 #' @import doParallel
 #' @export
-laws_hic_paral <- function(input, domain_input, chr, resolution, gc_frequency = 20) {
-# laws_hic_paral <- function(input, domain_input, chr, resolution) {
+# laws_hic_paral <- function(input, domain_input, chr, resolution, gc_frequency = 20) {
+laws_hic_paral <- function(input, domain_input, chr, resolution) {
 
-  # library(kedd)
-  # library(data.table)
-  # library(foreach)
-  # library(doParallel)
+  library(kedd)
+  library(data.table)
+  library(foreach)
+  library(doParallel)
 
   kb <- as.numeric(resolution)
 
@@ -94,9 +94,9 @@ laws_hic_paral <- function(input, domain_input, chr, resolution, gc_frequency = 
     # Combine the results
     result_chr <- rbindlist(list(result_chr, s_set_full))
 
-    if (i %% gc_frequency == 0) {
-      gc()
-    }
+    # if (i %% gc_frequency == 0) {
+    #   gc()
+    # }
 
   }
 
