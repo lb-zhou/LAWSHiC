@@ -2,7 +2,7 @@
 #' @description This function take peak caller results and topologically associating domains (TADs) list as input, adjusting the p-values by LAWS procedure then returns the LAWS-adjusted p-values and the estimated sparsity level.
 #' @param input A data.table containing Hi-C interactions with columns: `chr`, `fragmentMid1`, `fragmentMid2`, and `p_value`.
 #' @param domain_input A data.table containing TAD boundary information with columns: `chr`, `x1`, and `x2`.
-#' @param chr A character string or interger indicating the chromosome to process, please make sure it is consistent with your input.
+#' @param chr A character string or integer indicating the chromosome to process, please make sure it is consistent with your input.
 #' @param resolution A numeric value representing the resolution of Hi-C data in kilobases (kb).
 #' @return A `data.table` containing the original peak calling results with two additional columns: `p_laws` (adjusted p-values) and `pi` (estimated sparsity level).
 #' @import data.table
