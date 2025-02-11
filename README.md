@@ -109,7 +109,7 @@ LAWSHiC::laws_hic(input=example_data, domain_input=example_domain_list,
                   chr=21, resolution=10)
 ```
 
-When handling with long chromosomes or larger data, it is recommended to use parallel processing. `laws_hic_paral` can process it in parallel.
+For long chromosomes or large datasets, parallel processing is recommended. The `laws_hic_paral` function enables parallel execution for improved performance.
 
 ```{r}
 library(LAWSHiC)
