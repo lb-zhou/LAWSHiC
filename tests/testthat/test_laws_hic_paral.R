@@ -1,7 +1,13 @@
 test_that("laws_hic_paral works correctly", {
   # Prepare mock data
-  data <- data.table::fread("/Users/waltchen/github-repo/LAWSHiC/example_data.tsv")
-  domain <- data.table::fread("/Users/waltchen/github-repo/LAWSHiC/example_domain_list.tsv")
+  ## get the path of the package
+  package_path <- system.file(package = "LAWSHiC")
+  
+  withr::with_dir(package_path, {
+    data <- data.table::fread("example_data.tsv")
+    domain <- data.table::fread("example_domain_list.tsv")
+  })
+  
   resolution <- 10
   chr <- 21
 
