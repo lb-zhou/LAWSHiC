@@ -4,7 +4,7 @@
 #' `chr`, `fragmentMid1`, `fragmentMid2`, and `p_value`.
 #' @param domain_input A data.table containing TAD boundary information with columns:
 #' `chr`, `x1`, and `x2`.
-#' @param chr A character string indicating the chromosome to process.
+#' @param chr A character string or interger indicating the chromosome to process, please make sure it is consistent with your input.
 #' @param resolution A numeric value representing the resolution of Hi-C data in kilobases (kb).
 #' @param gc_frequency Garbage collection frequency, default is 20.
 #' @return A `data.table` containing the original peak calling results with two additional columns: `p_laws` (adjusted p-values) and `pi` (estimated sparsity level).
@@ -13,7 +13,7 @@
 #' @import foreach
 #' @import doParallel
 #' @export
-laws_hic_paral <- function(input, domain_input, chr, resolution, gc_frequency=20) {
+laws_hic_paral <- function(input, domain_input, chr, resolution, gc_frequency = 20) {
 
   library(kedd)
   library(data.table)
