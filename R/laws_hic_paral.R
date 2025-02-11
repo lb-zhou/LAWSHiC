@@ -16,10 +16,10 @@
 # laws_hic_paral <- function(input, domain_input, chr, resolution, gc_frequency = 20) {
 laws_hic_paral <- function(input, domain_input, chr, resolution) {
 
-  library(kedd)
-  library(data.table)
-  library(foreach)
-  library(doParallel)
+  # library(kedd)
+  # library(data.table)
+  # library(foreach)
+  # library(doParallel)
 
   kb <- as.numeric(resolution)
 

@@ -10,8 +10,8 @@
 #' @export
 laws_hic <- function(input, domain_input, chr, resolution) {
 
-  library(kedd)
-  library(data.table)
+  # library(kedd)
+  # library(data.table)
 
   kb <- as.numeric(resolution)
 

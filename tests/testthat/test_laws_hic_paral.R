@@ -1,6 +1,3 @@
-library(testthat)
-library(LAWSHiC)
-
 test_that("laws_hic_paral works correctly", {
   # Prepare mock data
   data <- data.table::fread("/Users/waltchen/github-repo/LAWSHiC/example_data.tsv")
@@ -22,5 +19,5 @@ test_that("laws_hic_paral works correctly", {
   # Check if results are within the TAD region using range
   expect_true(result_range[2] <= domain_range[2] & result_range[1] >= domain_range[1], 
               info = "Result bins should be within the TAD region")
-              
+
 })
