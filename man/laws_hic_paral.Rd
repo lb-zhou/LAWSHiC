@@ -4,7 +4,7 @@
 \alias{laws_hic_paral}
 \title{LAWS-Adjusted 3D Peak Calling P-Values. (Parallelized)}
 \usage{
-laws_hic_paral(input, domain_input, chr, resolution, gc_frequency = 20)
+laws_hic_paral(input, domain_input, chr, resolution)
 }
 \arguments{
 \item{input}{A data.table containing Hi-C interactions with columns:
