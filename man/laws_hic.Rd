@@ -11,7 +11,7 @@ laws_hic(input, domain_input, chr, resolution)
 
 \item{domain_input}{A data.table containing TAD boundary information with columns: \code{chr}, \code{x1}, and \code{x2}.}
 
-\item{chr}{A character string or interger indicating the chromosome to process, please make sure it is consistent with your input.}
+\item{chr}{A character string or integer indicating the chromosome to process, please make sure it is consistent with your input.}
 
 \item{resolution}{A numeric value representing the resolution of Hi-C data in kilobases (kb).}
 }
