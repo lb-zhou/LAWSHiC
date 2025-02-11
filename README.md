@@ -123,7 +123,24 @@ LAWSHiC::laws_hic(input=example_data, domain_input=example_domain_list,
                   chr = 21, resolution = 10)
 ```
 
-Both functions will output the tuned $\tau$ and $h$ for each domain.
+Both functions will output the tuned $\tau$ and $h$ for each domain:
+
+```{r}
+
+Processed TAD boundary  1 / 12  with tau =  0.2688476  and h =  1.237808 
+Processed TAD boundary  2 / 12  with tau =  0.5472209  and h =  1.210957 
+Processed TAD boundary  3 / 12  with tau =  0.4205185  and h =  0.8722585 
+Processed TAD boundary  4 / 12  with tau =  0.2951233  and h =  1.6203 
+Processed TAD boundary  5 / 12  with tau =  0.8130685  and h =  1.479749 
+Processed TAD boundary  6 / 12  with tau =  0.3582338  and h =  1.161979 
+Processed TAD boundary  7 / 12  with tau =  0.8927248  and h =  0.864941 
+Processed TAD boundary  8 / 12  with tau =  0.1364388  and h =  1.004806 
+Processed TAD boundary  9 / 12  with tau =  0.6925968  and h =  0.9334673 
+Processed TAD boundary  10 / 12  with tau =  0.595248  and h =  1.117409 
+Processed TAD boundary  11 / 12  with tau =  0.8927248  and h =  0.8722585 
+Processed TAD boundary  12 / 12  with tau =  0.8088843  and h =  0.864941
+
+```
 
 ### Output format
 
