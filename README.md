@@ -16,7 +16,7 @@ This package contains three functions:
 
 * laws_hic: adjust 3D peak calling results;
 
-*laws_hic_paral: adjust 3D peak calling results with parallelized job processing.
+* laws_hic_paral: adjust 3D peak calling results with parallelized job processing.
 
 ### Input data requirement and format
 
