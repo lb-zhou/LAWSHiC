@@ -1,9 +1,9 @@
 # LAWS-HiC
 
-LAWS-HiC is a post-processing tool designed to enhance the results of Hi-C peak callers. Using a *Locally Adaptive Weighting and Screening* (LAWS) approach [1], LAWS-HiC adjusts p-values by accounting for the local structure of data, addressing the common assumption of statistical independency among interactions made by most peak callers. This method enables more accurate identification of significant chromatin interactions.
+LAWS-HiC is a computational tool designed to enhance the power of standard Hi-C peak callers by post-processing their initial results. Using a *Locally Adaptive Weighting and Screening* (LAWS) approach [1], LAWS-HiC adjusts p-values from standard Hi-C peak callers by accounting for the local spatial dependency structure of data, alleviating the common assumption of statistical independency among interactions made by most standard peak callers. This method enables more accurate identification of significant chromatin interactions.
 
 ## Installation
-LAWS-HiC now is avaliable as an R package. This package can be installed from GitHub:
+LAWS-HiC now is available as an R package. This package can be installed from GitHub:
 ```r
 install.packages("devtools")
 devtools::install_github("lb-zhou/LAWSHiC")
@@ -14,9 +14,9 @@ devtools::install_github("lb-zhou/LAWSHiC")
 This package contains three functions:
 * bh.func(): this function is used to tune $\tau$. This function is based on the LAWS described by Cai et al. (2021) [1];
 
-* laws_hic(): adjust 3D peak calling results;
+* laws_hic(): adjusts 3D peak calling results;
 
-* laws_hic_paral(): adjust 3D peak calling results with parallelized job processing.
+* laws_hic_paral(): adjusts 3D peak calling results with parallelized job processing.
 
 ### Input data requirement and format
 
@@ -24,7 +24,7 @@ The required input of LAWS-HiC are:
 
 * results from a standard 3D peak caller (e.g., FitHiC2): only bin pair coordinators and p-values are needed for LAWS-HiC;
 
-* domain list, in this example domain list is topologically associated domain (TAD) list.
+* domain list, in this example domain list is the list of topologically associated domains (TADs).
 
 Here, we provide an example of 3D peak caller results and an example of domain list.
 
@@ -109,7 +109,7 @@ LAWSHiC::laws_hic(input=example_data, domain_input=example_domain_list,
                   chr=21, resolution=10)
 ```
 
-For long chromosomes or large datasets, parallel processing is recommended. The `laws_hic_paral()` function enables parallel execution for improved performance.
+For long chromosomes or large datasets, parallel processing is recommended. The `laws_hic_paral()` function enables parallel execution to enhance computational effciency.
 
 ```{r}
 library(LAWSHiC)
@@ -168,7 +168,7 @@ Processed TAD boundary  12 / 12  with tau =  0.8088843  and h =  0.864941
 
 The columns in the output data are: 
 
-* chr:chromosome number;
+* chr: chromosome number;
 
 * fragmentMid1, fragmentMid2: coordinators of bin pairs (same as input);
 
@@ -181,4 +181,5 @@ The columns in the output data are:
 * pi: LAWS-HiC estimated spatial level;
 
 ## References
+
 [1] Cai, T. Tony, Wenguang Sun, and Yin Xia. “LAWS: A Locally Adaptive Weighting and Screening Approach to Spatial Multiple Testing.” Journal of the American Statistical Association 117, no. 539 (2021): 1370–83. doi:10.1080/01621459.2020.1859379.
