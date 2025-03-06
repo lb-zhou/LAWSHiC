@@ -1,6 +1,6 @@
 # LAWS-HiC
 
-LAWS-HiC is a post-processing tool designed to enhance the results of Hi-C peak callers. Using a *locally adaptive weighting and screening* (LAWS) approach, LAWS-HiC adjusts p-values by accounting for the local structure of data, addressing the common assumption of statistical independency among interactions made by most peak callers. This method enables more accurate identification of significant chromatin interactions.
+LAWS-HiC is a post-processing tool designed to enhance the results of Hi-C peak callers. Using a *Locally Adaptive Weighting and Screening* (LAWS) approach, LAWS-HiC adjusts p-values by accounting for the local structure of data, addressing the common assumption of statistical independency among interactions made by most peak callers. This method enables more accurate identification of significant chromatin interactions.
 
 ## Installation
 LAWS-HiC now is avaliable as an R package. This package can be installed from GitHub:
@@ -14,9 +14,9 @@ devtools::install_github("lb-zhou/LAWSHiC")
 This package contains three functions:
 * bh.func(): this function is used to tune $\tau$. This function is based on the LAWS described by Cai et al. (2021) [1];
 
-* laws_hic: adjust 3D peak calling results;
+* laws_hic(): adjust 3D peak calling results;
 
-* laws_hic_paral: adjust 3D peak calling results with parallelized job processing.
+* laws_hic_paral(): adjust 3D peak calling results with parallelized job processing.
 
 ### Input data requirement and format
 
@@ -89,7 +89,7 @@ Please check `example_domain_list.csv` for the full example domain list data. Th
 
 ### LAWS-HiC
 
-For `laws_hic` and `laws_hic_paral` function, the input parameters are:
+For `laws_hic()` and `laws_hic_paral()` function, the input parameters are:
 
 * input: data of standard 3D peak caller results with format previously shown;
 
@@ -99,9 +99,9 @@ For `laws_hic` and `laws_hic_paral` function, the input parameters are:
 
 * resolution: resolution of the original Hi-C data in kb (e.g., 10 for 10kb resolution);
 
-* gc_frequency: only for `hic_laws_paral`. Garbage collection frequency, default is 20.
+* gc_frequency: only for `hic_laws_paral()`. Garbage collection frequency, default is 20.
 
-`laws_hic` is the function to adjust the 3D peak calling results with LAWS procedure:
+`laws_hic()` is the function to adjust the 3D peak calling results with LAWS procedure:
 
 ```{r}
 library(LAWSHiC)
@@ -109,7 +109,7 @@ LAWSHiC::laws_hic(input=example_data, domain_input=example_domain_list,
                   chr=21, resolution=10)
 ```
 
-For long chromosomes or large datasets, parallel processing is recommended. The `laws_hic_paral` function enables parallel execution for improved performance.
+For long chromosomes or large datasets, parallel processing is recommended. The `laws_hic_paral()` function enables parallel execution for improved performance.
 
 ```{r}
 library(LAWSHiC)
