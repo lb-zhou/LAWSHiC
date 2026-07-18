@@ -1,4 +1,4 @@
-# LAWSHiC
+# LAWS-HiC
 
 **L**ocally **A**daptive **W**eighting and **S**creening for **Hi-C** interaction calling.
 
