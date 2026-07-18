@@ -1,19 +1,17 @@
 Package: LAWSHiC
-Title: A Package for Post-processing Peak Caller Results
-Version: 0.0.0.9000
-Authors@R: 
-    person("Lingbo", "Zhou", , "lzhou1@unc.edu", role = c("aut", "cre"))
-Description: This package implements locally adaptive weighting and screening approach (LAWS) to 3D peak calling results of Hi-C data. LAWS-HiC improves peak detection by incorporating the locally sptial imformation of the data. 
-License: GPL-3
+Title: Local Adaptive Weighted Smoothing for Hi-C Interaction Calling
+Version: 0.1.0
+Authors@R:
+    person("Lingbo", "Zhou", email = "lbzhou1998@gmail.com", role = c("aut", "cre"))
+Description: Identifies significant chromatin interactions in Hi-C data by estimating
+    the local null proportion pi(i,j) for each bin pair via a multi-tau Gaussian
+    kernel smoother, then applying weighted Benjamini-Hochberg FDR control.
+License: MIT + file LICENSE
+Imports:
+    data.table (>= 1.14.0),
+    foreach,
+    doParallel,
+    parallel
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Imports:
-  data.table,
-  kedd,
-  foreach,
-  doParallel,
-  withr
-Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
